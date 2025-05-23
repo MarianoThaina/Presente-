@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,220 +12,180 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: #fff0f5;
-      color: #4a004f;
+      background: linear-gradient(135deg, #ffe6f0 0%, #ffb3cc 100%);
+      color: #5a004f;
       min-height: 100vh;
-      overflow-x: hidden;
+      padding: 1rem;
       position: relative;
+      overflow-x: hidden;
     }
-
-    canvas#particles {
+    #heartsCanvas {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: -1;
+      z-index: 0;
       pointer-events: none;
     }
-
+    header, section, footer {
+      position: relative;
+      z-index: 1;
+    }
     header {
       background: #d63384;
       color: white;
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 8px 15px rgba(214, 51, 132, 0.4);
       text-align: center;
       font-family: 'Pacifico', cursive;
     }
-
     .heart {
       font-size: 2.5rem;
       display: inline-block;
-      text-shadow: 0 0 8px #fff;
+      text-shadow: 0 0 5px #fff;
     }
-
-    header p {
-      margin-top: 0.5rem;
-      font-weight: 500;
-      font-size: 1.2rem;
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
-    }
-
     section {
       background: white;
       border-radius: 12px;
       max-width: 700px;
       margin: 2rem auto;
       padding: 2rem;
-      box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
-
     h2 {
       font-family: 'Pacifico', cursive;
-      font-size: 2rem;
-      margin-bottom: 1rem;
       color: #d63384;
+      font-size: 2rem;
       text-align: center;
+      margin-bottom: 1rem;
     }
-
     .timeline .event {
-      margin-bottom: 1.5rem;
+      margin: 1rem 0;
       font-weight: 600;
-      color: #7a0d57;
-      position: relative;
-      padding-left: 1.5rem;
     }
-
-    .timeline .event::before {
-      content: "💖";
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
     .letter {
       font-family: 'Pacifico', cursive;
+      font-size: 1.1rem;
       background: #ffe0eb;
-      border: 2px dashed #ff69b4;
       padding: 1.5rem;
       border-radius: 16px;
-      font-size: 1.1rem;
-      color: #6a004f;
       line-height: 1.8;
+      color: #6a004f;
+      border: 2px dashed #ff69b4;
       text-align: center;
-      font-style: italic;
-      font-weight: 500;
     }
-
     #contador {
-      font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.8rem;
+      font-weight: bold;
       color: #d63384;
-      text-shadow: 0 0 6px #ff66b3;
     }
-
     footer {
       background: #d63384;
       color: white;
-      padding: 1rem;
       text-align: center;
+      padding: 1.5rem;
       font-family: 'Pacifico', cursive;
-      margin-top: 3rem;
       border-radius: 0 0 12px 12px;
     }
-
+    footer::after {
+      content: " 💖";
+      animation: pulse 1.5s infinite;
+      display: inline-block;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
     @media (max-width: 768px) {
-      header h1 {
+      header, section {
+        padding: 1rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .heart {
         font-size: 2rem;
-      }
-
-      .letter {
-        font-size: 1rem;
-      }
-
-      section {
-        padding: 1.5rem;
-        margin: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
-
+  <canvas id="heartsCanvas"></canvas>
   <header>
     <h1 class="heart">❤️ Nossa História de Amor ❤️</h1>
     <p>Comemorando nosso amor em cada batida do coração 💘</p>
   </header>
-
   <section class="timeline">
     <h2>Linha do Tempo</h2>
     <div class="event"><strong>18/08/2024:</strong> Pedido de namoro 🌹</div>
     <div class="event"><strong>01/02/2025:</strong> Nosso Dia da Aliança 💝</div>
-    <div class="event"><strong>12/06/2025:</strong> Primeiro Dia dos Namorados 💝</div>
+    <div class="event"><strong>12/06/2025:</strong> Nosso primeiro Dia dos Namorados 💝</div>
   </section>
-
   <section class="letter">
     <h2>Minha cartinha de amor ❤️</h2>
     <p>
-      Desde o primeiro olhar, eu soube que algo especial estava nascendo. <br><br>
-      Cada riso seu é como música para minha alma, e cada abraço, um abrigo onde o mundo inteiro desaparece. <br><br>
-      Neste nosso primeiro Dia dos Namorados, quero que saiba que meu coração bate mais forte só por você. <br><br>
-      Te amo imensamente, em cada detalhe, em cada sonho. 💘
+      Desde o nosso primeiro olhar, eu soube que você era a pessoa certa pra mim. Cada sorriso seu alegra algo dentro de mim que não sei explicar, e cada abraço, um abrigo onde o mundo inteiro desaparece. <br><br>
+      Nosso amor é feito de pequenos gestos, de cumplicidade no silêncio, e da certeza de que fomos feitos um para o outro. <br><br>
+      Neste nosso primeiro Dia dos Namorados, quero que saiba que meu coração bate mais forte só por você. E que o “nós” que construímos é o que mais me faz feliz. <br><br>
+      Eu te amo imensamente, em cada detalhe, em cada sonho. Você é e sempre será minha pessoa preferida 💘
     </p>
   </section>
-
   <section>
     <h2>Quanto tempo juntos?</h2>
     <p>Estamos juntos há <span id="contador"></span> dias!</p>
   </section>
-
   <footer>
     Feito com ❤️ por Thainá
   </footer>
-
+  <audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Alex-Productions/Love/Valentine_-_Alex-Productions.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
   <script>
-    // Contador de dias juntos
     const dataInicio = new Date("2024-08-18");
     const hoje = new Date();
     const dias = Math.floor((hoje - dataInicio) / (1000 * 60 * 60 * 24));
     document.getElementById("contador").innerText = dias;
   </script>
-
-  <!-- Partículas de coração -->
   <script>
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById('heartsCanvas');
+    const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
-    const hearts = [];
-    const heartChar = "💖";
-
-    function Heart() {
-      this.x = Math.random() * canvas.width;
-      this.y = canvas.height + 20;
-      this.size = Math.random() * 24 + 18;
-      this.speed = Math.random() * 1.5 + 0.5;
-      this.opacity = Math.random() * 0.6 + 0.3;
-      this.char = heartChar;
+    let hearts = [];
+    function createHeart() {
+      const size = Math.random() * 20 + 10;
+      return {
+        x: Math.random() * canvas.width,
+        y: canvas.height + size,
+        size,
+        speed: Math.random() * 1.5 + 0.5,
+        opacity: Math.random() * 0.5 + 0.3
+      };
     }
-
-    Heart.prototype.draw = function () {
-      ctx.font = this.size + "px serif";
-      ctx.globalAlpha = this.opacity;
-      ctx.fillText(this.char, this.x, this.y);
-    };
-
-    Heart.prototype.update = function () {
-      this.y -= this.speed;
-      if (this.y < -50) {
-        this.y = canvas.height + 20;
-        this.x = Math.random() * canvas.width;
-      }
-    };
-
+    function drawHeart(h) {
+      ctx.globalAlpha = h.opacity;
+      ctx.font = `${h.size}px serif`;
+      ctx.fillText("💖", h.x, h.y);
+    }
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      while (hearts.length < 30) {
-        hearts.push(new Heart());
-      }
-      hearts.forEach((h) => {
-        h.update();
-        h.draw();
+      if (hearts.length < 50) hearts.push(createHeart());
+      hearts.forEach((h, i) => {
+        h.y -= h.speed;
+        drawHeart(h);
+        if (h.y < -h.size) hearts.splice(i, 1);
       });
       requestAnimationFrame(animate);
     }
-
+    animate();
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
-
-    animate();
   </script>
 </body>
 </html>
